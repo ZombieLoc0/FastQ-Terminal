@@ -1,6 +1,5 @@
 runtime: python
 
-handlers:
-- url: /
-  script: app.app
+env: flex
 
+entrypoint: gunicorn -w 4 -b 0.0.0.0:5000
