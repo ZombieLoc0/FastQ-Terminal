@@ -18,7 +18,7 @@ client.connect(ADDR)
 
 app = Flask(__name__)
 
-@app.route("/terminal-page", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def terminal_page():
     if request.method == "POST":
         send(request.form["send"])
@@ -40,5 +40,5 @@ def send(msg):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host="0.0.0.0", port=5000)
     
